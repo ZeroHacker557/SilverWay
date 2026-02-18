@@ -1,0 +1,230 @@
+.trust-section {
+    padding: var(--section-padding);
+}
+
+/* Instagram Carousel */
+.instagram-carousel {
+    margin-bottom: 80px;
+}
+
+.instagram-track-wrapper {
+    overflow: hidden;
+    position: relative;
+    margin-top: 40px;
+}
+
+.instagram-track-wrapper::before,
+.instagram-track-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.instagram-track-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.instagram-track-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+.instagram-track {
+    display: flex;
+    gap: 16px;
+    animation: scrollTrack 30s linear infinite;
+    width: max-content;
+    will-change: transform;
+}
+
+.instagram-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollTrack {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.instagram-item {
+    width: 220px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+    display: block;
+}
+
+.instagram-item:hover img {
+    transform: scale(1.1);
+}
+
+.instagram-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: border-color var(--transition-medium);
+    pointer-events: none;
+}
+
+.instagram-item:hover::after {
+    border-color: rgba(192, 192, 192, 0.4);
+}
+
+.instagram-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-overlay svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: white;
+    stroke-width: 1.5;
+}
+
+/* Unboxing Section */
+.unboxing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 60px;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    border: var(--border-silver);
+    position: relative;
+    overflow: hidden;
+}
+
+.unboxing::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(192, 192, 192, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.unboxing-image {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4 / 3;
+}
+
+.unboxing-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.8);
+}
+
+.unboxing-content {
+    padding: 20px 0;
+}
+
+.unboxing-content h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.unboxing-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.unboxing-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.unboxing-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.unboxing-feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(192, 192, 192, 0.08);
+    border: 1px solid rgba(192, 192, 192, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .instagram-item {
+        width: 160px;
+        height: 160px;
+    }
+
+    .instagram-track-wrapper::before,
+    .instagram-track-wrapper::after {
+        width: 40px;
+    }
+
+    .unboxing {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        gap: 24px;
+    }
+
+    .unboxing-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .unboxing-feature-icon {
+        width: 36px;
+        height: 36px;
+    }
+}

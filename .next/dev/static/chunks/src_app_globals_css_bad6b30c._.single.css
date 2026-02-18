@@ -1,0 +1,235 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111;
+  --bg-card: #141414;
+  --bg-card-hover: #1a1a1a;
+  --bg-overlay: #000000d9;
+  --text-primary: #fff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #888;
+  --text-dim: #666;
+  --silver-start: silver;
+  --silver-mid: #e8e8e8;
+  --silver-end: #a8a8a8;
+  --silver-bright: #d4d4d4;
+  --silver-gradient: linear-gradient(135deg, silver 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, silver 100%);
+  --silver-gradient-text: linear-gradient(135deg, #b8b8b8, #f0f0f0, #a0a0a0, #e0e0e0, #c8c8c8);
+  --silver-glow: 0 0 20px #c0c0c04d, 0 0 40px #c0c0c01a;
+  --silver-glow-strong: 0 0 30px #c0c0c080, 0 0 60px #c0c0c033;
+  --font-heading: var(--font-playfair), var(--font-cinzel), Georgia, serif;
+  --font-logo: var(--font-cinzel), var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  --section-padding: 100px 0;
+  --container-width: 1200px;
+  --container-padding: 0 24px;
+  --transition-fast: .2s cubic-bezier(.4, 0, .2, 1);
+  --transition-medium: .4s cubic-bezier(.4, 0, .2, 1);
+  --transition-slow: .6s cubic-bezier(.4, 0, .2, 1);
+  --border-silver: 1px solid #c0c0c026;
+  --border-silver-hover: 1px solid #c0c0c066;
+  --z-header: 1000;
+  --z-mobile-nav: 999;
+  --z-modal: 1100;
+  --z-search: 1050;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: var(--container-padding);
+  margin: 0 auto;
+}
+
+.silver-text {
+  background: var(--silver-gradient-text);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  letter-spacing: .05em;
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  letter-spacing: .03em;
+  font-size: clamp(.9rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.scroll-animate {
+  opacity: 0;
+  transition: opacity .8s cubic-bezier(.4, 0, .2, 1), transform .8s cubic-bezier(.4, 0, .2, 1);
+  transform: translateY(40px);
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-delay-1 {
+  transition-delay: .1s;
+}
+
+.scroll-animate-delay-2 {
+  transition-delay: .2s;
+}
+
+.scroll-animate-delay-3 {
+  transition-delay: .3s;
+}
+
+.scroll-animate-delay-4 {
+  transition-delay: .4s;
+}
+
+@keyframes silverGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px #c0c0c033;
+  }
+
+  50% {
+    box-shadow: var(--silver-glow);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200%;
+  }
+
+  100% {
+    background-position: 200%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0)rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1)rotate(180deg);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c04d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c0c080;
+}
+
+::selection {
+  color: var(--text-primary);
+  background: #c0c0c04d;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+/*# sourceMappingURL=src_app_globals_css_bad6b30c._.single.css.map*/

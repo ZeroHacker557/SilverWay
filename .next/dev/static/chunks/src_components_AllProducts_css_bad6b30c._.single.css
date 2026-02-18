@@ -1,0 +1,142 @@
+/* [project]/src/components/AllProducts.css [app-client] (css) */
+.all-products-page {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding: 120px 0 60px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-header h1 {
+  font-family: var(--font-heading);
+  margin-bottom: 12px;
+  font-size: 3rem;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.filter-bar {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  display: flex;
+}
+
+.filter-btn {
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  border: 1px solid #c0c0c033;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-size: .85rem;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--silver-start);
+  color: var(--text-primary);
+  background: #c0c0c00d;
+}
+
+.filter-btn.active {
+  background: var(--silver-gradient);
+  color: var(--bg-primary);
+  font-weight: 600;
+}
+
+.size-selector-mini {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.size-selector-mini span {
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  font-size: .75rem;
+  display: block;
+}
+
+.size-options {
+  gap: 8px;
+  display: flex;
+}
+
+.size-options button {
+  width: 32px;
+  height: 32px;
+  transition: all var(--transition-fast);
+  border: 1px solid #c0c0c033;
+  border-radius: 4px;
+  font-size: .75rem;
+}
+
+.size-options button:hover, .size-options button.active {
+  border-color: var(--silver-start);
+  color: var(--text-primary);
+}
+
+.size-options button.active {
+  background: var(--silver-start);
+  color: var(--bg-primary);
+}
+
+.add-to-cart-btn {
+  background: var(--silver-gradient);
+  width: 100%;
+  color: var(--bg-primary);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  transition: all var(--transition-fast);
+  border-radius: 8px;
+  margin-top: 15px;
+  padding: 12px;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.add-to-cart-btn:hover {
+  box-shadow: var(--silver-glow);
+  transform: translateY(-2px);
+}
+
+.size-error-toast {
+  color: #fff;
+  z-index: 2000;
+  background: #f44;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: .9rem;
+  animation: .3s fadeInUp;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 15px #ff44444d;
+}
+
+@media (max-width: 768px) {
+  .all-products-page {
+    padding: 100px 0 40px;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .filter-bar {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: .75rem;
+  }
+}
+
+/*# sourceMappingURL=src_components_AllProducts_css_bad6b30c._.single.css.map*/
