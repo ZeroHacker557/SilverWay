@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import TelegramBot from 'node-telegram-bot-api';
 import { getSupabaseServiceRole } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 const token = process.env.TELEGRAM_BOT_TOKEN!;
 const adminId = process.env.TELEGRAM_ADMIN_ID!;
 const internalSecret = process.env.INTERNAL_API_SECRET!;

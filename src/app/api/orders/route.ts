@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import TelegramBot from 'node-telegram-bot-api';
 
+export const dynamic = 'force-dynamic';
+
 const token = process.env.TELEGRAM_BOT_TOKEN!;
 const adminId = process.env.TELEGRAM_ADMIN_ID!;
 const bot = new TelegramBot(token);
